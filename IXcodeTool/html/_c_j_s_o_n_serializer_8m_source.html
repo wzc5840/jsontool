@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>IXcodeTool: IXcodeTool/Classes/third/TouchJSON/JSON/CJSONSerializer.m 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">IXcodeTool
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>文件成员</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_c_j_s_o_n_serializer_8m_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>类</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>属性</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">CJSONSerializer.m</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_c_j_s_o_n_serializer_8m.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//  CJSONSerializer.m</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//  TouchJSON</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//  Created by Jonathan Wight on 12/07/2005.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//  Copyright (c) 2005 Jonathan Wight</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//  Permission is hereby granted, free of charge, to any person</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//  obtaining a copy of this software and associated documentation</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//  files (the &quot;Software&quot;), to deal in the Software without</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//  restriction, including without limitation the rights to use,</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//  copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//  copies of the Software, and to permit persons to whom the</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//  Software is furnished to do so, subject to the following</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//  conditions:</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//  The above copyright notice and this permission notice shall be</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//  included in all copies or substantial portions of the Software.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//  OTHER DEALINGS IN THE SOFTWARE.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#import &quot;<a class="code" href="_c_j_s_o_n_serializer_8h.html">CJSONSerializer.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">@implementation </span><a class="code" href="interface_c_j_s_o_n_serializer.html">CJSONSerializer</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="interface_c_j_s_o_n_serializer.html#aa59b952ac25ea0477c7fce21c4463412">   34</a></span>&#160;+ (id)<a class="code" href="interface_c_j_s_o_n_serializer.html#aa59b952ac25ea0477c7fce21c4463412">serializer</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordflow">return</span>([[[<span class="keyword">self</span> alloc] init] autorelease]);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="interface_c_j_s_o_n_serializer.html#abdf516fbb75ed694fce6aeb24c112c5d">   39</a></span>&#160;- (NSString *)serializeObject:(<span class="keywordtype">id</span>)inObject;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;NSString *theResult = <span class="stringliteral">@&quot;&quot;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordflow">if</span> ([inObject isKindOfClass:[NSNull <span class="keyword">class</span>]])</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    theResult = [<span class="keyword">self</span> <a class="code" href="interface_c_j_s_o_n_serializer.html#a77c109157a674e23eb4b7db2e0036f71">serializeNull</a>:inObject];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordflow">else</span> <span class="keywordflow">if</span> ([inObject isKindOfClass:[NSNumber <span class="keyword">class</span>]])</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    theResult = [<span class="keyword">self</span> <a class="code" href="interface_c_j_s_o_n_serializer.html#ac7f1431341f7a860fbcb4b69cf0c77f6">serializeNumber</a>:inObject];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordflow">else</span> <span class="keywordflow">if</span> ([inObject isKindOfClass:[NSString <span class="keyword">class</span>]])</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    theResult = [<span class="keyword">self</span> <a class="code" href="interface_c_j_s_o_n_serializer.html#a3a8dec595ce096f04a6c9a374131b3df">serializeString</a>:inObject];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordflow">else</span> <span class="keywordflow">if</span> ([inObject isKindOfClass:[NSArray <span class="keyword">class</span>]])</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    theResult = [<span class="keyword">self</span> <a class="code" href="interface_c_j_s_o_n_serializer.html#a55dd8060ee7fb362c6e69f97dcfd647c">serializeArray</a>:inObject];</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordflow">else</span> <span class="keywordflow">if</span> ([inObject isKindOfClass:[NSDictionary <span class="keyword">class</span>]])</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    theResult = [<span class="keyword">self</span> <a class="code" href="interface_c_j_s_o_n_serializer.html#aa0b01aa7591f69b46ea6399a0121d76f">serializeDictionary</a>:inObject];</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordflow">else</span> <span class="keywordflow">if</span> ([inObject isKindOfClass:[NSData <span class="keyword">class</span>]])</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    NSString *theString = [[[NSString alloc] initWithData:inObject encoding:NSUTF8StringEncoding] autorelease];</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    theResult = [<span class="keyword">self</span> <a class="code" href="interface_c_j_s_o_n_serializer.html#a3a8dec595ce096f04a6c9a374131b3df">serializeString</a>:theString];</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordflow">else</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    [NSException raise:NSGenericException format:@&quot;Cannot serialize data of type &#39;%@&#39;&quot;, NSStringFromClass([inObject class])];</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordflow">if</span> (theResult == NULL)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    [NSException raise:NSGenericException format:@&quot;Could not serialize object &#39;%@&#39;&quot;, inObject];</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordflow">return</span>(theResult);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="interface_c_j_s_o_n_serializer.html#a77c109157a674e23eb4b7db2e0036f71">   77</a></span>&#160;- (NSString *)serializeNull:(NSNull *)inNull</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#pragma unused (inNull)</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordflow">return</span>(<span class="stringliteral">@&quot;null&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="interface_c_j_s_o_n_serializer.html#ac7f1431341f7a860fbcb4b69cf0c77f6">   83</a></span>&#160;- (NSString *)serializeNumber:(NSNumber *)inNumber</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;NSString *theResult = NULL;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordflow">switch</span> (CFNumberGetType((CFNumberRef)inNumber))</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">case</span> kCFNumberCharType:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">int</span> theValue = [inNumber intValue];</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (theValue == 0)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            theResult = <span class="stringliteral">@&quot;false&quot;</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theValue == 1)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            theResult = <span class="stringliteral">@&quot;true&quot;</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            theResult = [inNumber stringValue];</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">case</span> kCFNumberSInt8Type:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">case</span> kCFNumberSInt16Type:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">case</span> kCFNumberSInt32Type:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">case</span> kCFNumberSInt64Type:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">case</span> kCFNumberFloat32Type:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">case</span> kCFNumberFloat64Type:</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">case</span> kCFNumberShortType:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">case</span> kCFNumberIntType:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">case</span> kCFNumberLongType:</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">case</span> kCFNumberLongLongType:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">case</span> kCFNumberFloatType:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">case</span> kCFNumberDoubleType:</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">case</span> kCFNumberCFIndexType:</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        theResult = [inNumber stringValue];</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keywordflow">return</span>(theResult);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="interface_c_j_s_o_n_serializer.html#a3a8dec595ce096f04a6c9a374131b3df">  119</a></span>&#160;- (NSString *)serializeString:(NSString *)inString</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;NSMutableString *theMutableCopy = [[inString mutableCopy] autorelease];</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;[theMutableCopy replaceOccurrencesOfString:@&quot;\\&quot; withString:@&quot;\\\\&quot; options:0 range:NSMakeRange(0, [theMutableCopy length])];</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;[theMutableCopy replaceOccurrencesOfString:@&quot;\&quot;&quot; withString:@&quot;\\\&quot;&quot; options:0 range:NSMakeRange(0, [theMutableCopy length])];</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;[theMutableCopy replaceOccurrencesOfString:@&quot;/&quot; withString:@&quot;\\/&quot; options:0 range:NSMakeRange(0, [theMutableCopy length])];</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;[theMutableCopy replaceOccurrencesOfString:@&quot;\b&quot; withString:@&quot;\\b&quot; options:0 range:NSMakeRange(0, [theMutableCopy length])];</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;[theMutableCopy replaceOccurrencesOfString:@&quot;\f&quot; withString:@&quot;\\f&quot; options:0 range:NSMakeRange(0, [theMutableCopy length])];</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;[theMutableCopy replaceOccurrencesOfString:@&quot;\n&quot; withString:@&quot;\\n&quot; options:0 range:NSMakeRange(0, [theMutableCopy length])];</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;[theMutableCopy replaceOccurrencesOfString:@&quot;\n&quot; withString:@&quot;\\n&quot; options:0 range:NSMakeRange(0, [theMutableCopy length])];</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;[theMutableCopy replaceOccurrencesOfString:@&quot;\t&quot; withString:@&quot;\\t&quot; options:0 range:NSMakeRange(0, [theMutableCopy length])];</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">            case &#39;u&#39;:</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">                {</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">                theCharacter = 0;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">                int theShift;</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">                for (theShift = 12; theShift &gt;= 0; theShift -= 4)</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">                    {</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">                    int theDigit = HexToInt([self scanCharacter]);</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">                    if (theDigit == -1)</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">                        {</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">                        [self setScanLocation:theScanLocation];</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">                        return(NO);</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">                        }</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">                    theCharacter |= (theDigit &lt;&lt; theShift);</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">                    }</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">                }</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keywordflow">return</span>([NSString stringWithFormat:<span class="stringliteral">@&quot;\&quot;</span>%@\<span class="stringliteral">&quot;&quot;</span>, theMutableCopy]);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="interface_c_j_s_o_n_serializer.html#a55dd8060ee7fb362c6e69f97dcfd647c">  151</a></span>&#160;- (NSString *)serializeArray:(NSArray *)inArray</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;NSMutableString *theString = [NSMutableString string];</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;NSEnumerator *theEnumerator = [inArray objectEnumerator];</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">id</span> theValue = NULL;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keywordflow">while</span> ((theValue = [theEnumerator nextObject]) != NULL)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    [theString appendString:[<span class="keyword">self</span> <a class="code" href="interface_c_j_s_o_n_serializer.html#abdf516fbb75ed694fce6aeb24c112c5d">serializeObject</a>:theValue]];</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span> (theValue != [inArray lastObject])</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        [theString appendString:@&quot;,&quot;];</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keywordflow">return</span>([NSString stringWithFormat:<span class="stringliteral">@&quot;[%@]&quot;</span>, theString]);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="interface_c_j_s_o_n_serializer.html#aa0b01aa7591f69b46ea6399a0121d76f">  166</a></span>&#160;- (NSString *)serializeDictionary:(NSDictionary *)inDictionary</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;NSMutableString *theString = [NSMutableString string];</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;NSArray *theKeys = [inDictionary allKeys];</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;NSEnumerator *theEnumerator = [theKeys objectEnumerator];</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;NSString *theKey = NULL;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keywordflow">while</span> ((theKey = [theEnumerator nextObject]) != NULL)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">id</span> theValue = [inDictionary objectForKey:theKey];</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    [theString appendFormat:@&quot;%@:%@&quot;, [<span class="keyword">self</span> <a class="code" href="interface_c_j_s_o_n_serializer.html#a3a8dec595ce096f04a6c9a374131b3df">serializeString</a>:theKey], [<span class="keyword">self</span> <a class="code" href="interface_c_j_s_o_n_serializer.html#abdf516fbb75ed694fce6aeb24c112c5d">serializeObject</a>:theValue]];</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">if</span> (theKey != [theKeys lastObject])</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        [theString appendString:@&quot;,&quot;];</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keywordflow">return</span>([NSString stringWithFormat:<span class="stringliteral">@&quot;{%@}&quot;</span>, theString]);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">@end</span></div>
+<div class="ttc" id="interface_c_j_s_o_n_serializer_html_abdf516fbb75ed694fce6aeb24c112c5d"><div class="ttname"><a href="interface_c_j_s_o_n_serializer.html#abdf516fbb75ed694fce6aeb24c112c5d">-[CJSONSerializer serializeObject:]</a></div><div class="ttdeci">NSString * serializeObject:(id inObject)</div><div class="ttdef"><b>Definition:</b> <a href="_c_j_s_o_n_serializer_8m_source.html#l00039">CJSONSerializer.m:39</a></div></div>
+<div class="ttc" id="_c_j_s_o_n_serializer_8h_html"><div class="ttname"><a href="_c_j_s_o_n_serializer_8h.html">CJSONSerializer.h</a></div></div>
+<div class="ttc" id="interface_c_j_s_o_n_serializer_html_aa0b01aa7591f69b46ea6399a0121d76f"><div class="ttname"><a href="interface_c_j_s_o_n_serializer.html#aa0b01aa7591f69b46ea6399a0121d76f">-[CJSONSerializer serializeDictionary:]</a></div><div class="ttdeci">NSString * serializeDictionary:(NSDictionary *inDictionary)</div><div class="ttdef"><b>Definition:</b> <a href="_c_j_s_o_n_serializer_8m_source.html#l00166">CJSONSerializer.m:166</a></div></div>
+<div class="ttc" id="interface_c_j_s_o_n_serializer_html_a77c109157a674e23eb4b7db2e0036f71"><div class="ttname"><a href="interface_c_j_s_o_n_serializer.html#a77c109157a674e23eb4b7db2e0036f71">-[CJSONSerializer serializeNull:]</a></div><div class="ttdeci">NSString * serializeNull:(NSNull *inNull)</div><div class="ttdef"><b>Definition:</b> <a href="_c_j_s_o_n_serializer_8m_source.html#l00077">CJSONSerializer.m:77</a></div></div>
+<div class="ttc" id="interface_c_j_s_o_n_serializer_html_a55dd8060ee7fb362c6e69f97dcfd647c"><div class="ttname"><a href="interface_c_j_s_o_n_serializer.html#a55dd8060ee7fb362c6e69f97dcfd647c">-[CJSONSerializer serializeArray:]</a></div><div class="ttdeci">NSString * serializeArray:(NSArray *inArray)</div><div class="ttdef"><b>Definition:</b> <a href="_c_j_s_o_n_serializer_8m_source.html#l00151">CJSONSerializer.m:151</a></div></div>
+<div class="ttc" id="interface_c_j_s_o_n_serializer_html"><div class="ttname"><a href="interface_c_j_s_o_n_serializer.html">CJSONSerializer</a></div><div class="ttdef"><b>Definition:</b> <a href="_c_j_s_o_n_serializer_8h_source.html#l00032">CJSONSerializer.h:32</a></div></div>
+<div class="ttc" id="interface_c_j_s_o_n_serializer_html_ac7f1431341f7a860fbcb4b69cf0c77f6"><div class="ttname"><a href="interface_c_j_s_o_n_serializer.html#ac7f1431341f7a860fbcb4b69cf0c77f6">-[CJSONSerializer serializeNumber:]</a></div><div class="ttdeci">NSString * serializeNumber:(NSNumber *inNumber)</div><div class="ttdef"><b>Definition:</b> <a href="_c_j_s_o_n_serializer_8m_source.html#l00083">CJSONSerializer.m:83</a></div></div>
+<div class="ttc" id="interface_c_j_s_o_n_serializer_html_aa59b952ac25ea0477c7fce21c4463412"><div class="ttname"><a href="interface_c_j_s_o_n_serializer.html#aa59b952ac25ea0477c7fce21c4463412">+[CJSONSerializer serializer]</a></div><div class="ttdeci">id serializer()</div><div class="ttdef"><b>Definition:</b> <a href="_c_j_s_o_n_serializer_8m_source.html#l00034">CJSONSerializer.m:34</a></div></div>
+<div class="ttc" id="interface_c_j_s_o_n_serializer_html_a3a8dec595ce096f04a6c9a374131b3df"><div class="ttname"><a href="interface_c_j_s_o_n_serializer.html#a3a8dec595ce096f04a6c9a374131b3df">-[CJSONSerializer serializeString:]</a></div><div class="ttdeci">NSString * serializeString:(NSString *inString)</div><div class="ttdef"><b>Definition:</b> <a href="_c_j_s_o_n_serializer_8m_source.html#l00119">CJSONSerializer.m:119</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f9d3156b865717fd2ff34e4b253274f2.html">IXcodeTool</a></li><li class="navelem"><a class="el" href="dir_693d036f7e3e42dd2276c4b2c36a067b.html">Classes</a></li><li class="navelem"><a class="el" href="dir_cbd7628a67ae4e1cc54e3a34f95904e9.html">third</a></li><li class="navelem"><a class="el" href="dir_dab29ff8c0246f0eae0a2b116376eaa2.html">TouchJSON</a></li><li class="navelem"><a class="el" href="dir_8d8ffcea6ab79801a24bbe7cbab0dfc8.html">JSON</a></li><li class="navelem"><a class="el" href="_c_j_s_o_n_serializer_8m.html">CJSONSerializer.m</a></li>
+    <li class="footer">生成于 2014年 四月 25日 星期五 11:32:24 , 为 IXcodeTool使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
+  </ul>
+</div>
+</body>
+</html>
