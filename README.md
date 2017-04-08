@@ -6,4 +6,5 @@ A tool which easy to generate json model
 3. Click make button to generate the json modal class.
 ## Example
 NSDictionary *dicJson = some valid json string
-SomeModelClass *model = [[SomeModelClass alloc] initWithDataDic:dicJson];
+
+SomeModelClass *model = [[SomeModelClass alloc] initWithDataDic:dic];
