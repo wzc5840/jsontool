@@ -7,4 +7,4 @@ A tool which easy to generate json model
 ## Example
 NSDictionary *dicJson = some valid json string
 
-SomeModelClass *model = [[SomeModelClass alloc] initWithDataDic:dic];
+SomeModelClass *model = [[SomeModelClass alloc] initWithDataDic:dicJson];
