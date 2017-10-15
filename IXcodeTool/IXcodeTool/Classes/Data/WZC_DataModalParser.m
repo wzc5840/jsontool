@@ -453,10 +453,20 @@ static WZC_DataModalParser *sharedInst = nil;
     NSMutableString *strDicObjsKeysHeaders = [[NSMutableString alloc] init];
     // Method
     NSMutableString *strDicObjsKeys = [[NSMutableString alloc] init];
+    //encodeWithCoder
+    NSMutableString *strEncodeMethods = [[NSMutableString alloc] init];
+    //decodeWithCoder
+    NSMutableString *strDecodeMethods = [[NSMutableString alloc] init];
     //总字符串
     NSMutableString *str = [[NSMutableString alloc] init];
     
     [strCls appendFormat:@"\r\r@implementation %@\r",strCn];
+    
+    [strEncodeMethods appendString:@"\r\r- (void)encodeWithCoder:(NSCoder *)aCoder"];
+    [strEncodeMethods appendString:@"\r{"];
+    
+    [strDecodeMethods appendString:@"\r\r- (id)initWithCoder:(NSCoder *)aDecoder"];
+    [strDecodeMethods appendString:@"\r{"];
     
     [strDicObjsKeysHeaders appendString:@"\r\r- (NSDictionary *)setAttributeDictionary"];
     [strDicObjsKeysHeaders appendString:@"\r{"];
@@ -483,12 +493,18 @@ static WZC_DataModalParser *sharedInst = nil;
             if(0 == strcmp("d", p)){
                 //double
                 [strDescriptionMethods appendFormat:@"\\r    %@ : %%f",perKey];
+                [strEncodeMethods appendFormat:@"\r     [aCoder encodeObject:[NSNumber numberWithDouble:self.%@] forKey:@\"%@\"];",perKey,perKey];
+                [strDecodeMethods appendFormat:@"\r     self.%@ = [[aDecoder decodeObjectForKey:@\"%@\"] doubleValue];",perKey,perKey];
             }else if(0 == strcmp("q", p)){
                 //long
                 [strDescriptionMethods appendFormat:@"\\r    %@ : %%ld",perKey];
+                [strEncodeMethods appendFormat:@"\r     [aCoder encodeObject:[NSNumber numberWithLong:self.%@] forKey:@\"%@\"];",perKey,perKey];
+                [strDecodeMethods appendFormat:@"\r     self.%@ = [[aDecoder decodeObjectForKey:@\"%@\"] longValue];",perKey,perKey];
             }else if(0 == strcmp("c", p)){
                 //BOOL
                 [strDescriptionMethods appendFormat:@"\\r    %@ : %%d",perKey];
+                [strEncodeMethods appendFormat:@"\r     [aCoder encodeObject:[NSNumber numberWithBool:self.%@] forKey:@\"%@\"];",perKey,perKey];
+                [strDecodeMethods appendFormat:@"\r     self.%@ = [[aDecoder decodeObjectForKey:@\"%@\"] boolValue];",perKey,perKey];
             }
             
             [strDescriptionFormat appendFormat:@"self.%@",perKey];
@@ -499,11 +515,12 @@ static WZC_DataModalParser *sharedInst = nil;
             [strDeallocMethods appendFormat:@"\r     self.%@ = nil;",perKey];
             [strDescriptionMethods appendFormat:@"\\r    %@ : %%@",perKey];
             [strDescriptionFormat appendFormat:@"self.%@",perKey];
+            [strEncodeMethods appendFormat:@"\r     [aCoder encodeObject:self.%@ forKey:@\"%@\"];",perKey,perKey];
+            [strDecodeMethods appendFormat:@"\r     self.%@ = [aDecoder decodeObjectForKey:@\"%@\"];",perKey,perKey];
             
             //继续生成新类
             NSString *strNewDicClass = [self makeMClassStringWithClassName:strDicName withDic:tempVal];
             [strSubClass appendString:strNewDicClass];
-            
         }else if([tempVal isKindOfClass:[NSArray class]]){
             NSString *strDicName = [self makeSubClassNameWithClassName:strCn withKeyString:perKey];
             [strInitMethods appendFormat:@"\r      [_runtimeClassNameDic setObject:@\"%@\" forKey:@\"%@\"];",strDicName,perKey];
@@ -511,6 +528,8 @@ static WZC_DataModalParser *sharedInst = nil;
             [strDeallocMethods appendFormat:@"\r     self.%@ = nil;",perKey];
             [strDescriptionMethods appendFormat:@"\\r    %@ : %%@",perKey];
             [strDescriptionFormat appendFormat:@"self.%@",perKey];
+            [strEncodeMethods appendFormat:@"\r     [aCoder encodeObject:self.%@ forKey:@\"%@\"];",perKey,perKey];
+            [strDecodeMethods appendFormat:@"\r     self.%@ = [aDecoder decodeObjectForKey:@\"%@\"];",perKey,perKey];
             
             NSArray *tempArray = (NSArray *)tempVal;
             if(tempArray.count > 0){
@@ -528,6 +547,8 @@ static WZC_DataModalParser *sharedInst = nil;
             [strDeallocMethods appendFormat:@"\r     self.%@ = nil;",perKey];
             [strDescriptionMethods appendFormat:@"\\r    %@ : %%@",perKey];
             [strDescriptionFormat appendFormat:@"self.%@",perKey];
+            [strEncodeMethods appendFormat:@"\r     [aCoder encodeObject:self.%@ forKey:@\"%@\"];",perKey,perKey];
+            [strDecodeMethods appendFormat:@"\r     self.%@ = [aDecoder decodeObjectForKey:@\"%@\"];",perKey,perKey];
         }
         
         if(i != (count - 1)){
@@ -538,6 +559,13 @@ static WZC_DataModalParser *sharedInst = nil;
             [strDicObjsKeys appendString:strItem];
         }
     }
+    
+    [strMethods appendString:strEncodeMethods];
+    [strMethods appendString:@"\r}"];
+    
+    [strMethods appendString:strDecodeMethods];
+    [strMethods appendString:@"\r\r     return self;"];
+    [strMethods appendString:@"\r}"];
     
     if(strDicObjsKeys.length > 0){
         [strMethods appendString:strDicObjsKeysHeaders];
