@@ -371,6 +371,8 @@ static WZC_DataModalParser *sharedInst = nil;
         id tempVal = [dic objectForKey:key];
         if([key isEqualToString:@"id"]){
             key = @"ID";
+        }else if([key isEqualToString:@"description"]){
+            key = @"description1";
         }
         if([tempVal isKindOfClass:[NSNumber class]]){
             NSNumber *n = (NSNumber *)tempVal;
@@ -470,6 +472,8 @@ static WZC_DataModalParser *sharedInst = nil;
         id perKey = key;
         if([key isEqualToString:@"id"]){
             perKey = @"ID";
+        }else if([key isEqualToString:@"description"]){
+            perKey = @"description1";
         }
         if([tempVal isKindOfClass:[NSNumber class]]){
             strItem = [NSString stringWithFormat:@"\r\t\t\t\t\t\t  @\"%@\",@\"%@\",",perKey,key];
