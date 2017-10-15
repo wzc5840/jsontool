@@ -42,7 +42,7 @@
     
 //    [_jsonDataTextView setString:@"{\"be\":true,\"id\": \"123123\",\"total_price\": \"103.45\",\"products\" : [{\"id\": \"123\",\"name\": \"Product #1\",\"price\": 12.95,\"testDic\":{\"a\":\"hhhhh\"}},{\"id\": \"137\",\"name\": \"Product #2\",\"price\": 82.95,\"testDic\":{\"a\":\"hhhhh\"}}],\"dataDic\":{\"abc\":\"hahaha\",\"num\":\"100\",\"testDic\":{\"a\":\"hhhhh\"}}}"];
     
-        [_jsonDataTextView setString:@""];
+    [_jsonDataTextView setString:@""];
 
     [_textFieldPath setStringValue:@""];
     
